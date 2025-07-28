@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wallpaper Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">WALLPAPER HUB</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Categories</a></li>
+      <li><a href="#" onclick="toggleSidebar()">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <input type="text" id="searchInput" placeholder="Search wallpapers...">
+      <button onclick="showFavorites()">❤️ Favorites</button>
+      <button onclick="toggleLogin()" id="loginBtn">👤 Login</button>
+      <button id="toggle-dark" class="mode-toggle">🌓</button>
+    </div>
+  </nav>
+
+  <div id="sidebar" class="sidebar">
+    <span class="close-btn" onclick="toggleSidebar()">✖</span>
+    <h3>Contact Us</h3>
+    <p>Email: abhyanshu2@gmail.com</p>
+    <p>Instagram: abhyanshuraj_</p>
+    <h3>Feedback</h3>
+    <textarea placeholder="Your feedback..." rows="4"></textarea>
+    <button>Submit</button>
+  </div>
+
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" onclick="toggleLogin()">✖</span>
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Enter Username">
+      <input type="password" id="password" placeholder="Enter Password">
+      <button onclick="loginUser()">Login</button>
+      <p id="loginMsg"></p>
+    </div>
+  </div>
+
+  <section id="filters">
+    <button onclick="filterCategory('All')">All</button>
+    <button onclick="filterCategory('Nature')">Nature</button>
+    <button onclick="filterCategory('Anime')">Anime</button>
+    <button onclick="filterCategory('Superhero')">Superhero</button>
+  </section>
+
+  <!-- Image Section -->
+
+  <main id="wallpaperGrid">
+    <div class="card" data-id="1" data-category="Nature">
+      <div class="wallpaper">
+        <img src="images/nature1.jpeg" alt="nature">
+        <span class="tag">Nature</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/nature1.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-id="2" data-category="Anime">
+      <div class="wallpaper">
+        <img src="images/anime1.jpeg" alt="Anime">
+        <span class="tag">Anime</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/anime1.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-id="1" data-category="Superhero">
+  <div class="wallpaper">
+    <img src="images/superhero1.jpeg" alt="Superhero">
+    <span class="tag">Superhero</span>
+    <div class="actions">
+      <button class="fav-btn">🤍</button>
+      <a class="download-btn" href="images/superhero1.jpeg" download target="_blank">⬇️</a>
+    </div>
+  </div>
+</div>
+    <div class="card" data-id="1" data-category="Nature">
+      <div class="wallpaper">
+        <img src="images/nature2.jpeg" alt="Nature">
+        <span class="tag">Nature</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/nature2.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+      <div class="card" data-id="1" data-category="Anime">
+      <div class="wallpaper">
+        <img src="images/anime2.jpeg" alt="Anime">
+        <span class="tag">Anime</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/anime2.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>  
+     <div class="card" data-id="1" data-category="Superhero">
+      <div class="wallpaper">
+        <img src="images/superhero2.jpeg" alt="Superhero">
+        <span class="tag">Superhero</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/superhero2.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div> 
+      <div class="card" data-id="1" data-category="Nature">
+      <div class="wallpaper">
+        <img src="images/nature6.jpeg" alt="Nature">
+        <span class="tag">Nature</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/nature6.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div> 
+      <div class="card" data-id="1" data-category="Anime">
+      <div class="wallpaper">
+        <img src="images/anami3.jpeg" alt="Anime">
+        <span class="tag">Anime</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/anami3.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+     <div class="card" data-id="1" data-category="Nature">
+      <div class="wallpaper">
+        <img src="images/nature4.jpeg" alt="Nature">
+        <span class="tag">Nature</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/nature4.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-id="2" data-category="Anime">
+      <div class="wallpaper">
+        <img src="images/anime4.jpeg" alt="Anime">
+        <span class="tag">Anime</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/anime4.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-id="1" data-category="Superhero">
+  <div class="wallpaper">
+    <img src="images/superhero4.jpeg" alt="Superhero">
+    <span class="tag">Superhero</span>
+    <div class="actions">
+      <button class="fav-btn">🤍</button>
+      <a class="download-btn" href="images/superhero4.jpeg0" download target="_blank">⬇️</a>
+    </div>
+  </div>
+</div>
+    <div class="card" data-id="1" data-category="Nature">
+      <div class="wallpaper">
+        <img src="images/nature5.jpeg" alt="Nature">
+        <span class="tag">Nature</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/nature5.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+      <div class="card" data-id="1" data-category="anime">
+      <div class="wallpaper">
+        <img src="images/anime5.jpeg" alt="Anime">
+        <span class="tag">Anime</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/anime5.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>  
+     <div class="card" data-id="1" data-category="Superhero">
+      <div class="wallpaper">
+        <img src="images/superhero5.jpeg" alt="Superhero">
+        <span class="tag">Superhero</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/superhero5.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div> 
+      <div class="card" data-id="1" data-category="Nature">
+      <div class="wallpaper">
+        <img src="images/nature6.jpeg" alt="Nature">
+        <span class="tag">Nature</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/nature6.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div> 
+      <div class="card" data-id="1" data-category="Anime">
+      <div class="wallpaper">
+        <img src="images/anime6.jpeg" alt="Anime">
+        <span class="tag">Anime</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/anime6.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+     <div class="card" data-id="1" data-category="Superhero">
+      <div class="wallpaper">
+        <img src="images/superhero6.jpeg" alt="Superhero">
+        <span class="tag">Superhero</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/superhero6.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-id="2" data-category="Anime">
+      <div class="wallpaper">
+        <img src="images/anime7.jpeg" alt="Anime">
+        <span class="tag">Anime</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/anime7.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-id="1" data-category="Nature">
+  <div class="wallpaper">
+    <img src="images/nature8.jpeg" alt="Nature">
+    <span class="tag">Nature</span>
+    <div class="actions">
+      <button class="fav-btn">🤍</button>
+      <a class="download-btn" href="images/nature8.jpeg" download target="_blank">⬇️</a>
+    </div>
+  </div>
+</div>
+    <div class="card" data-id="1" data-category="Anime">
+      <div class="wallpaper">
+        <img src="images/anime8.jpeg" alt="Anime">
+        <span class="tag">Anime</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/anime8.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+      <div class="card" data-id="1" data-category="Superhero">
+      <div class="wallpaper">
+        <img src="images/iron man.jpeg" alt="Superhero">
+        <span class="tag">Superhero</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/iron man.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>  
+     <div class="card" data-id="1" data-category="Nature">
+      <div class="wallpaper">
+        <img src="images/nature8.jpeg" alt="Nature">
+        <span class="tag">Nature</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/nature8.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div> 
+      <div class="card" data-id="1" data-category="Anime">
+      <div class="wallpaper">
+        <img src="images/an2.jpeg" alt="Anime">
+        <span class="tag">Anime</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/an2.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div> 
+      <div class="card" data-id="1" data-category="Superhero">
+      <div class="wallpaper">
+        <img src="images/superhero8.jpeg" alt="Superhero">
+        <span class="tag">Superhero</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/superhero8.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+     <div class="card" data-id="1" data-category="Anime">
+      <div class="wallpaper">
+        <img src="images/an6.jpeg" alt="Anime">
+        <span class="tag">Anime</span>
+        <div class="actions">
+          <button class="fav-btn">🤍</button>
+          <a class="download-btn" href="images/an6.jpeg" download target="_blank">⬇️</a>
+        </div>
+      </div>
+    </div>
+    <!-- Add more cards as needed -->
+  </main>
+  
+    <!-- User Upload section -->
+  <section class="upload-section">
+  <h2>Upload Your Wallpaper</h2>
+  <form id="uploadForm">
+    <input type="file" id="wallpaperInput" accept="image/*" required>
+    <button type="submit">Upload</button>
+  </form>
+  <div id="previewContainer"></div>
+</section>
+
+  <footer>
+    <p>Free Stock Wallpapers | 8K | Abstract | Nature | Desktop</p>
+    <p>Follow us: YouTube | Instagram | GitHub</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
+      <!-- about me
+       Hey guyzz my name is ABHYANSHU and i made this site sayad ap log ko pasand aya ho 
+                                                                        yeha tak visit karna ka liya thnx   -->
